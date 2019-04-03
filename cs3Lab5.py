@@ -22,8 +22,7 @@ class HashTableC(object):
         
 def InsertC(H,k,l):
     H.num_Items = H.num_Items+1
-    # Inserts k in appropriate bucket (list) 
-    # Does nothing if k is already in the table
+    #Inserts k in appropriate bucket(list) 
     b = h(k,len(H.item))
     if H.num_Items / len(H.item) >= 1.0:
         # increments the capacity of hash table
@@ -34,8 +33,7 @@ def InsertC(H,k,l):
     
    
 def FindC(H,k):
-    # Returns bucket (b) and index (i) 
-    # If k is not in table, i == -1
+    #Returns bucket and index of given element k
     b = h(k,len(H.item))
     for i in range(len(H.item[b])):
         if H.item[b][i][0] == k:
