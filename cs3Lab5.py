@@ -11,9 +11,6 @@ import math
 import time
 
 class HashTableC(object):
-    # Builds a hash table of size 'size'
-    # Item is a list of (initially empty) lists
-    # Constructor
     def __init__(self,size):  
         self.item = []
         for i in range(size):
@@ -25,7 +22,7 @@ def InsertC(H,k,l):
     #Inserts k in appropriate bucket(list) 
     b = h(k,len(H.item))
     if H.num_Items / len(H.item) >= 1.0:
-        # increments the capacity of hash table
+        #increments capacity of hash table
         for i in range(len(H.item)+1):
             H.item.append([])
         b = h(k,len(H.item))
