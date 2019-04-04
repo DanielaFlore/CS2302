@@ -40,7 +40,7 @@ def FindC(H,k):
 def h(s,n):
     r = 0
     for c in s:
-        r = (r*n + ord(c))% n
+        r = (r*255 + ord(c))% n
     return r
 #computes load factor
 def loadFactor(H):
@@ -84,13 +84,11 @@ def hashTableBuilder():
           for i in range(len(emb)):
               embedding.append(float(emb[i])) 
           #inserts word and embedding into hash table 
-          InsertC(H,word, embedding)      
-    print('################################')      
+          InsertC(H,word, embedding)            
     print('Initial table size:', originalSize)
     print('Final table size:', len(H.item))
     print('Load factor:', loadFactor(H))
     print('Percentage of empty lists:', emptyListsPerc(H))
-    print('################################')
 ##################################################
 class BST(object):
     # Constructor
